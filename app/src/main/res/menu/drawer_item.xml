@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/firstId"
+            android:title="first item"/>
+        <item android:title="second Id"
+            android:id="@+id/secondId"
+            />
+
+        <item android:title="Others">
+            <menu>
+                <item
+                    android:id="@+id/ratingAppId"
+                    android:title="Rating App"
+                    />
+                <item
+                    android:id="@+id/shareAppId2"
+                    android:title="Share app" />
+            </menu>
+
+        </item>
+    </group>
+
+</menu>
