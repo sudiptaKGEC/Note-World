@@ -9,7 +9,7 @@
     android:layout_marginBottom="4sp"
     android:id="@+id/linearViewId"
     android:gravity=""
-    android:background="@drawable/note_background">
+    android:background="@drawable/item_background">
 
     <TextView
         android:layout_width="wrap_content"

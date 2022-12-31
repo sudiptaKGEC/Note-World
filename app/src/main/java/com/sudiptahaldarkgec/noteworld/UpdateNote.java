@@ -37,12 +37,13 @@ public class UpdateNote extends AppCompatActivity {
         updateNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MySQLDataBaseHelper myDb= new MySQLDataBaseHelper(UpdateNote.this);
-                myDb.updateData(id, noteTitleTxt.getText().toString(), noteContentTxt.getText().toString());
-                Toast.makeText(UpdateNote.this, "updated successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                finish();
+//                MySQLDataBaseHelper myDb= new MySQLDataBaseHelper(UpdateNote.this);
+//                myDb.updateData(id, noteTitleTxt.getText().toString(), noteContentTxt.getText().toString());
+//                Toast.makeText(UpdateNote.this, "updated successfully", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(intent);
+//                finish();
+                updateNote();
             }
         });
 
@@ -104,9 +105,17 @@ public class UpdateNote extends AppCompatActivity {
         builder.create().show();
     }
 
+
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        updateNote();
+    }
+    void updateNote(){
+        MySQLDataBaseHelper myDb= new MySQLDataBaseHelper(UpdateNote.this);
+        myDb.updateData(id, noteTitleTxt.getText().toString(), noteContentTxt.getText().toString());
+        Toast.makeText(UpdateNote.this, "updated successfully", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         finish();

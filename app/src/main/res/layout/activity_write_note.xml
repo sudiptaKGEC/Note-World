@@ -6,57 +6,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#EA7070"
+    android:background="#E2ED77"
     tools:context=".WriteNote">
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10sp"
+        android:layout_margin="5sp"
+        android:background="#F38989">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:id="@+id/noteTitleEditTxtWriteNoteId"
-                android:hint="@string/note_title"
-                android:paddingStart="15sp"
-                android:layout_marginTop="50sp"
-                android:textSize="21sp"
-                android:background="#E8D6D6"
-                android:layout_marginStart="20sp"
-                android:layout_marginEnd="20sp"/>
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FD090000"
-                android:id="@+id/noteContentEditTxtWriteNoteId"
-                android:hint="@string/take_your_note_here"
-                android:layout_marginTop="10sp"
-                android:paddingStart="15sp"
-                android:textSize="20sp"
-                android:minLines="18"
-                android:layout_marginStart="20sp"
-                android:gravity="start"
-                android:background="#E8D6D6"
-                android:layout_marginEnd="20sp"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:textSize="20sp"
-                android:layout_marginStart="20sp"
-                android:layout_marginEnd="20sp"
-                android:text="@string/save_note"
-                android:layout_marginBottom="50sp"
-                android:background="@drawable/button_background"
-                android:id="@+id/saveNoteButtonWriteNoteId"/>
+                android:orientation="vertical">
 
-        </LinearLayout>
-    </ScrollView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:id="@+id/noteTitleEditTxtWriteNoteId"
+                    android:hint="@string/note_title"
+                    android:paddingStart="15sp"
+                    android:layout_marginTop="50sp"
+                    android:textSize="21sp"
+                    android:background="#E8D6D6"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FD090000"
+                    android:id="@+id/noteContentEditTxtWriteNoteId"
+                    android:hint="@string/take_your_note_here"
+                    android:layout_marginTop="10sp"
+                    android:paddingStart="15sp"
+                    android:textSize="20sp"
+                    android:minLines="18"
+                    android:layout_marginStart="20sp"
+                    android:gravity="start"
+                    android:background="#E8D6D6"
+                    android:layout_marginEnd="20sp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20sp"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:text="@string/save_note"
+                    android:layout_marginBottom="50sp"
+                    android:background="@drawable/button_background"
+                    android:id="@+id/saveNoteButtonWriteNoteId"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
 
 
 
