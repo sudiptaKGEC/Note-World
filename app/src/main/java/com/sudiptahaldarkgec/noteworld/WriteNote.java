@@ -35,21 +35,29 @@ public class WriteNote extends AppCompatActivity {
         saveNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MySQLDataBaseHelper mySQLDataBaseHelper = new MySQLDataBaseHelper(WriteNote.this);
-                title = titleEditTxt.getText().toString().trim();
-                content = contentEditTxt.getText().toString().trim();
 
-                if(title.equals("")){
-                    Toast.makeText(WriteNote.this, "title can not be empty", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                // running the save note function
+                saveNotesClass();
 
-                    mySQLDataBaseHelper.saveNote(title, content);
+                // below commented code for save note .because save note er void function made below so this is code is not needed
 
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+//                MySQLDataBaseHelper mySQLDataBaseHelper = new MySQLDataBaseHelper(WriteNote.this);
+//                title = titleEditTxt.getText().toString().trim();
+//                content = contentEditTxt.getText().toString().trim();
+//
+//                if(title.equals("")){
+//                    Toast.makeText(WriteNote.this, "title can not be empty", Toast.LENGTH_SHORT).show();
+//                }
+//                else{
+//
+//                    mySQLDataBaseHelper.saveNote(title, content);
+//
+//                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+
+
 
 
             }
@@ -62,12 +70,48 @@ public class WriteNote extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
 
+        // on backPress notes will save
+        title = titleEditTxt.getText().toString().trim();
+        content = contentEditTxt.getText().toString().trim();
+
+        if(title.equals("") && content.equals("")){
+            goBackToMainActivity();
+        }
+        else if(title.equals("")){
+
+                Toast.makeText(WriteNote.this, "title can not be empty", Toast.LENGTH_SHORT).show();
+            
+        }
+        else {
+            saveNotesClass();
+            goBackToMainActivity();
+        }
+
+
+
+    }
+
+    void saveNotesClass(){
+        MySQLDataBaseHelper mySQLDataBaseHelper = new MySQLDataBaseHelper(WriteNote.this);
+        title = titleEditTxt.getText().toString().trim();
+        content = contentEditTxt.getText().toString().trim();
+
+        if(title.equals("")){
+            Toast.makeText(WriteNote.this, "title can not be empty", Toast.LENGTH_SHORT).show();
+        }
+        else{
+
+            mySQLDataBaseHelper.saveNote(title, content);
+
+            goBackToMainActivity();
+        }
+    }
+
+    void goBackToMainActivity(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         finish();
     }
-
-
 
 
 }

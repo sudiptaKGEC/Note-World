@@ -44,6 +44,7 @@ public class UpdateNote extends AppCompatActivity {
 //                startActivity(intent);
 //                finish();
                 updateNote();
+                Toast.makeText(UpdateNote.this, "updated successfully", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -115,7 +116,7 @@ public class UpdateNote extends AppCompatActivity {
     void updateNote(){
         MySQLDataBaseHelper myDb= new MySQLDataBaseHelper(UpdateNote.this);
         myDb.updateData(id, noteTitleTxt.getText().toString(), noteContentTxt.getText().toString());
-        Toast.makeText(UpdateNote.this, "updated successfully", Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         finish();
